@@ -4,7 +4,8 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
 import React, { useEffect, useRef, useState } from 'react';
-import CircularProgress from '@mui/material/CircularProgress';
+import 'react-loading-skeleton/dist/skeleton.css'
+import Skeleton from '@mui/material/Skeleton';
 
 function App() {
     const [messages, setMessages] = useState({ data: [{ message: 'hello', client: true }, { client: false, message: 'As of the most recent estimates in 2023, the population of Bangalore (officially known as Bengaluru), the capital city of Karnataka, India, is approximately **13-14 million** people. The last official Indian Census was conducted in 2011, at which time Bangalore’s population was about 8.5 million. Since then, the city has experienced rapid growth due to migration and urbanization.\n\nFor the most up-to-date and official figures, you may refer to the upcoming results from the next Indian Census when released. However, current reputable estimates generally place Bangalore’s population in the **13–14 million** range.' }, { client: false, message: 'As of the most recent estimates in 2023, the population of Bangalore (officially known as Bengaluru), the capital city of Karnataka, India, is approximately **13-14 million** people. The last official Indian Census was conducted in 2011, at which time Bangalore’s population was about 8.5 million. Since then, the city has experienced rapid growth due to migration and urbanization.\n\nFor the most up-to-date and official figures, you may refer to the upcoming results from the next Indian Census when released. However, current reputable estimates generally place Bangalore’s population in the **13–14 million** range.' }] })
@@ -24,6 +25,7 @@ function App() {
     const askAI = async (inputSearch) => {
         setLoading(true)
         const response = await fetch('https://super-computing-machine-p6grp74g59jf97qx-5000.app.github.dev/query/' + inputSearch, { credentials: 'include' }).then(resp => resp?.json()).then(data => data)
+            .catch(err => err)
         setLoading(false)
         updateLoader(response)
     }
@@ -66,7 +68,9 @@ function App() {
                             }
                             {messageObj?.loading &&
                                 <div key={index} className='message_text' style={{ textAlign: (messageObj?.client ? 'right' : 'left') }}>
-                                    <CircularProgress size={20} />
+                                    <Box sx={{ width: '70%' }}>
+                                        <Skeleton />
+                                    </Box>
                                 </div>
                             }
                         </React.Fragment>

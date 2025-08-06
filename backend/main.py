@@ -7,7 +7,10 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-CORS(app,supports_credentials=True)
+CORS(app,
+     origins='https://super-computing-machine-p6grp74g59jf97qx-3000.app.github.dev',
+     supports_credentials=True
+     )
 
 
 @app.route('/')
