@@ -18,13 +18,15 @@ function App() {
     }, [messages])
 
     const scrollIntoView = () => {
-        const container = document.getElementById('chat_message_container')
+        const container = containerRef.current
         container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' })
     }
 
     const askAI = async (inputSearch) => {
         setLoading(true)
-        const response = await fetch('https://super-computing-machine-p6grp74g59jf97qx-5000.app.github.dev/query/' + inputSearch, { credentials: 'include' }).then(resp => resp?.json()).then(data => data)
+        const computingMachineCode = 'p6grp74g59jf97qx'
+        const baseUrl = `super-computing-machine-${computingMachineCode}-5000.app.github.dev`
+        const response = await fetch(`https://${baseUrl}/query/` + inputSearch, { credentials: 'include' }).then(resp => resp?.json()).then(data => data)
             .catch(err => err)
         setLoading(false)
         updateLoader(response)
@@ -37,7 +39,7 @@ function App() {
         setMessages({ data: tempList })
     }
 
-    const handleSend = (e) => {
+    const handleSend = () => {
         const loadingMessage = { client: false, loading: true }
         if (inputMessage?.message) {
             messages.data = [...messages?.data, inputMessage, loadingMessage]
