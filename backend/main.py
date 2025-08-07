@@ -8,13 +8,14 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app,
-     origins='https://super-computing-machine-p6grp74g59jf97qx-3000.app.github.dev',
+     origins='https://ai-chatbot-190v.onrender.com',
      supports_credentials=True
      )
 
 
 @app.route('/')
 def backend_check():
+    print("Backend works...")
     return "Backend works"
 
 @app.route('/query/<search_stream>')
