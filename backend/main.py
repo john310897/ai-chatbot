@@ -19,9 +19,6 @@ def backend_check():
 
 @app.route('/query/<search_stream>')
 def search(search_stream):
-    output={'client':False,'message':"hello how can i help you"}
-    # print(output)
-    # return output
     endpoint = "https://models.github.ai/inference"
     model = "openai/gpt-4.1"
     token = os.environ["GITHUB_TOKEN"]
@@ -41,8 +38,6 @@ def search(search_stream):
         model=model
     )
     output={'client':False,'message':response.choices[0].message.content}
-    print(output)
-    
     return output
 
 if __name__ == "__main__":

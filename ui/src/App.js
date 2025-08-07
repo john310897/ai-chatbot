@@ -8,7 +8,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import Skeleton from '@mui/material/Skeleton';
 
 function App() {
-    const [messages, setMessages] = useState({ data: [{ message: 'hello', client: true }, { client: false, message: 'As of the most recent estimates in 2023, the population of Bangalore (officially known as Bengaluru), the capital city of Karnataka, India, is approximately **13-14 million** people. The last official Indian Census was conducted in 2011, at which time Bangalore’s population was about 8.5 million. Since then, the city has experienced rapid growth due to migration and urbanization.\n\nFor the most up-to-date and official figures, you may refer to the upcoming results from the next Indian Census when released. However, current reputable estimates generally place Bangalore’s population in the **13–14 million** range.' }, { client: false, message: 'As of the most recent estimates in 2023, the population of Bangalore (officially known as Bengaluru), the capital city of Karnataka, India, is approximately **13-14 million** people. The last official Indian Census was conducted in 2011, at which time Bangalore’s population was about 8.5 million. Since then, the city has experienced rapid growth due to migration and urbanization.\n\nFor the most up-to-date and official figures, you may refer to the upcoming results from the next Indian Census when released. However, current reputable estimates generally place Bangalore’s population in the **13–14 million** range.' }] })
+    const [messages, setMessages] = useState({ data: [{ message: 'Hello! How can I assist you today?', client: false }] })
     const [inputMessage, setInputMessage] = useState({})
     const containerRef = useRef(null);
     const [loading, setLoading] = useState(false)
@@ -57,6 +57,7 @@ function App() {
 
     return (
         <div className="App">
+            <h5 className='title'>Powered by GitHub OpenAI GPT-4.1 Model</h5>
             <div className='chat_container'>
                 <div className='chat_message_container' id='chat_message_container' ref={containerRef}>
                     {messages?.data?.map((messageObj, index) => (

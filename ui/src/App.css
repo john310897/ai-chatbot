@@ -2,7 +2,6 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  /* align-items: flex-end; */
   margin-top: 2%;
   width: 90%;
   height: 90vh;
@@ -28,7 +27,7 @@
   width: 100%;
   align-content: flex-end;
   overflow: auto;
-  background-color: darkslategrey;
+  background-color: #222831;
 }
 
 .message_text {
@@ -42,4 +41,10 @@
   padding: 1%;
   border: 1px solid;
   border-radius: 10px;
+}
+
+.title {
+  margin: auto;
+  text-align: center;
+  color: aliceblue;
 }
