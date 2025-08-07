@@ -58,6 +58,7 @@ function App() {
     return (
         <div className="App">
             <h5 className='title'>Powered by GitHub OpenAI GPT-4.1 Model</h5>
+            <h6 className='title'>backend is deployed on a free instance will spin down with inactivity, which can delay requests by 50 seconds or more.</h6>
             <div className='chat_container'>
                 <div className='chat_message_container' id='chat_message_container' ref={containerRef}>
                     {messages?.data?.map((messageObj, index) => (
