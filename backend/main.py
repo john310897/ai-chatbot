@@ -8,7 +8,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app,
-     origins='https://ai-chatbot-190v.onrender.com',
+     origins='https://john310897.github.io',
      supports_credentials=True
      )
 

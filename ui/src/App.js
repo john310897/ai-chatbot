@@ -25,7 +25,7 @@ function App() {
     const askAI = async (inputSearch) => {
         setLoading(true)
         const computingMachineCode = 'p6grp74g59jf97qx'
-        const baseUrl = `super-computing-machine-${computingMachineCode}-5000.app.github.dev`
+        const baseUrl = `ai-chatbot-190v.onrender.com`
         const response = await fetch(`https://${baseUrl}/query/` + inputSearch, { credentials: 'include' }).then(resp => resp?.json()).then(data => data)
             .catch(err => err)
         setLoading(false)
