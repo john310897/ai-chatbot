@@ -1,5 +1,4 @@
-<h1 align="center" style="background: #121FCF;
-background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+<h1 align="center" style="background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;">AI-Chatbot</h1>
 
