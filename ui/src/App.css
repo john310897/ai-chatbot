@@ -1,10 +1,11 @@
 .chat_container {
   margin: auto;
+  margin-bottom: 2%;
   display: flex;
   flex-wrap: wrap;
   margin-top: 2%;
   width: 90%;
-  height: 90vh;
+  height: 80vh;
   border: solid black;
   border-radius: 10px;
 }
@@ -23,7 +24,7 @@
 }
 
 .chat_message_container {
-  height: 77vh;
+  height: 66vh;
   width: 100%;
   align-content: flex-end;
   overflow: auto;
@@ -45,6 +46,7 @@
 
 .title {
   margin: auto;
+  margin-top: 1%;
   text-align: center;
   color: aliceblue;
 }
